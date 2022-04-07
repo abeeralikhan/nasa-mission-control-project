@@ -1,0 +1,3 @@
+planets = [];
+
+module.exports = planets;
