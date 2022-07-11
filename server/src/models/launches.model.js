@@ -1,3 +1,6 @@
+const launchesDatabase = require('./launches.mongo');
+const planets = require('./planets.mongo');
+
 const launches = new Map();
 
 let latestFlightNumber = 100;
@@ -13,12 +16,35 @@ const launch = {
     success: true
 };
 
+saveLaunch(launch);
+
 launches.set(launch.flightNumber, launch);
 // launches.get(100);
 
 // Below is a data access function that processes the data so the controller doesn't have to do it
-function getAllLaunches() {
-    return Array.from(launches.values());
+async function getAllLaunches() {
+    // return Array.from(launches.values()); // old code: without mongodb database
+    return await launchesDatabase
+        .find({}, { '_id': 0, '__v': 0 });
+}
+
+async function saveLaunch(launch) {
+    const planet = await planets.findOne({
+        keplarName: launch.target,
+    });
+
+    if (!planet) {
+        throw new Error('No matching planet found!');
+    }
+
+    await launchesDatabase.updateOne(
+        {
+            flightNumber: launch.flightNumber,
+        }, launch,
+        {
+            upsert: true,
+        }
+    );
 }
 
 // Object.assign(object, option) --> Adds property to an existing JS Object. If property already exist,
