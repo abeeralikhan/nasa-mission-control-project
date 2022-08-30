@@ -1,4 +1,4 @@
-﻿# nasa-mission-control-project
+﻿# NASA Mission Control
  
 1) npm run install
 2) npm run deploy
