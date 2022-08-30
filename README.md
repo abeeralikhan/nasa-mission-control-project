@@ -2,13 +2,13 @@
 
 # Preview
 - Mission launch page
-![Launch](https://github.com/abeeralikhan/nasa-mission-control-project/tree/main/images/launches_page.png?raw=true)
+![Launch](https://github.com/abeeralikhan/nasa-mission-control-project/blob/main/images/launches_page.png?raw=true)
 
 - Upcomming missions page
-![Upcomming](https://github.com/abeeralikhan/nasa-mission-control-project/tree/main/images/upcomming_page.png?raw=true)
+![Upcomming](https://github.com/abeeralikhan/nasa-mission-control-project/blob/main/images/upcomming_page.png?raw=true)
 
 - Missions history page
-![History](https://github.com/abeeralikhan/nasa-mission-control-project/tree/main/images/history_page.png?raw=true)
+![History](https://github.com/abeeralikhan/nasa-mission-control-project/blob/main/images/history_page.png?raw=true)
 
 # To start the application 
 1) npm run install
